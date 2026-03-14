@@ -92,6 +92,7 @@ This project involves cleaning a **real-world online retail dataset** sourced fr
 - Column extraction and standardization
 
 ## 🌞About
-This project is part of data portfolio.
-📧putriayulw10@gmail.com 🌐https://www.linkedin.com/in/putriayulichawardani 
+This project is part of data portfolio.<br>
+📧putriayulw10@gmail.com <br>
+🌐https://www.linkedin.com/in/putriayulichawardani 
 
