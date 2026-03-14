@@ -24,12 +24,16 @@ This project involves cleaning a **real-world online retail dataset** sourced fr
 |   Raw_Weight   | Missing values + inconsisten format    |   513 rows  | 
 |    Brand       | Missing values + encoding errors +     |   344 rows  |
 |                | inconsistent capitalization                          |
-|   ProducName   | Missing values + encoding errors +     |   96 rows   |
+|   ProductName  | Missing values + encoding errors +     |   96 rows   |
 |                | trademark symbols      
 |   OrderDate    | Missing value                          |   1 row     |
 |   Country      | Missing value + multilingual names +   |   1 row     |
 |                |  irrelevant prefixes                                 |
 
+## 🔦Cleaning Process
+1. UnitPrice - Missing values
+   - Calculate median using Array Formula to exclude empty cells:
+     =MEDIAN(IF($H$2:$H$3001>0,$H$2:$H$3001))
 
 
 
