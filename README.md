@@ -31,9 +31,45 @@ This project involves cleaning a **real-world online retail dataset** sourced fr
 |                |  irrelevant prefixes                                 |
 
 ## 🔦Cleaning Process
-1. UnitPrice - Missing values
-   - Calculate median using Array Formula to exclude empty cells:
-     =MEDIAN(IF($H$2:$H$3001>0,$H$2:$H$3001))
+1. **UnitPrice - Missing Values**
+   - Calculate **Median** using **Array Formula** to exclude empty cells:
+     **=MEDIAN(IF(H2:H3001>0,H2:H3001))**
+   - Median result: **13.16**
+   - Filled 386 empty cells using **CRTL+G -> Special -> Blanks**
+     
+2. **Raw_Weight - Inconsistent Format**
+   - Created new column `Weight_Value` to extract numeric values using LEFT, MIN, FIND formula
+   - Created new column `Weight_Unit` to extract unit labels
+   - Created `Weight_Unit_Clean` to standardize units into: `g`, `kg`, `ml`, `l`, or `unknown`
+   - **Result:** 2,394 rows standardized, 590 marked as `unknown` (513 originally empty, 77 undetermined)
+     
+3. **Brand - Encoding Rrrors & Inconsistency**
+   - Fixed broken Latin encoding using Find & Replace:
+      - `Ã©` → `é`
+      - `â€™` → `'`
+      - `Ã¨` → `è`
+      - and more...
+   - Non-Latin characters (Arabic, Cyrillic, Emoji) were left as-is (out of cleaning scope)
+   - Standardized capitalization using `=PROPER(TRIM())`
+   - Filled 334 empty cells with `Unknown`
+4. **ProductName - Encoding & Missing Values**
+   - Removed broken trademark symbols (`Â®`, `â„¢`) using Find & Replace
+   - Filled 96 empty cells with `Unknown`
+   - Standardized capitalization using `=PROPER(TRIM())`
+
+5. **OrderDate - Missing Value**
+   - Deleted 1 empty row (0.03% of total data — not significant)
+
+6. **Country - Multilingual & Format Issues**
+   - Removed irrelevant prefixes (`en:`, `fr:`, `de:`, `es:`) using Find & Replace
+   - Standardized country names to English:
+      - `Maroc` → `Morocco`
+      - `Argelia` → `Algeria`
+      - `Frankreich` → `France`
+      - and more...
+   - Standardized capitalization using `=PROPER(TRIM())`
+   - Filled 1 empty cell with `Unknown`
+
 
 
 
