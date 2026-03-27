@@ -1,8 +1,8 @@
 # 🧹 Data Cleaning Project — Online Retail Dataset
-### Before 
+### Before Cleaning
 <img width="882" height="520" alt="Screenshot 2026-03-14 141840" src="https://github.com/user-attachments/assets/ebd9fece-4c8f-4f5d-84eb-e4ecff4c7841" />
 
-### After
+### After Cleaning
 <img width="882" height="520" alt="image" src="https://github.com/user-attachments/assets/0cbc1fda-b921-473d-83da-b569af06a162" />
 
 
